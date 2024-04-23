@@ -8,31 +8,34 @@
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.example1.Beverage;
+import edu.bu.met.cs665.example1.VendingMachine;
+import edu.bu.met.cs665.example1.beverageFactory.CoffeeFactory;
+import edu.bu.met.cs665.example1.beverageFactory.TeaFactory;
+import edu.bu.met.cs665.example1.condiments.Milk;
+import edu.bu.met.cs665.example1.condiments.Sugar;
 
 /**
  * This is the Main class.
  */
 public class Main {
 
-  /**
-   * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final projects requires JUnit tests.
-   */
   public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
+    VendingMachine teaFactory = new TeaFactory();
+    Beverage greenTea = teaFactory.createBeverage("Green");
+
+    greenTea = new Sugar(greenTea, 4);
+    greenTea = new Milk(greenTea, 5);
+
+    System.out.println(greenTea.getDescription());
+    System.out.println(greenTea.calcualtePrice());
+
+    VendingMachine coffeeFactory = new CoffeeFactory();
+    Beverage latte = coffeeFactory.createBeverage("Latte");
+
+    System.out.println(latte.getDescription());
+    System.out.println(latte.calcualtePrice());
   }
 
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
-  }
 
 }
