@@ -6,24 +6,46 @@
 | Course       |  Spring      |
 | Assignment 6 |                            |
 
-# Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+# Assignment Details
+
+Examined the previous project assignment 1 and identified code improvement opportunities and refactored the code.
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/Dhruv-praju/CS665-Assignment-6
 
 # Implementation Description 
 
+The refactored UML diagram incorporates several improvements over the previous design, addressing the identified areas of concern and adhering to object-oriented design principles. Here's an explanation of how the design has improved:
 
-For each assignment, please answer the following:
+1. **Introduction of Abstract Classes and Interfaces**:
+   - The introduction of the `Beverage` and `CondimentDecorator` abstract classes promotes better code organization, extensibility, and adherence to the Open/Closed Principle (OCP).
+   - By defining common properties and methods in the abstract classes, you can easily extend the functionality by creating new concrete subclasses without modifying the existing code.
+   - The use of abstract classes also facilitates code reuse and helps in avoiding code duplication.
 
-- Explain the level of flexibility in your implementation, including how new object types can
-be easily added or removed in the future.
-- Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-chosen.
+2. **Separation of Concerns**:
+   - The design now separates the concerns of creating beverages, adding condiments, and calculating prices into distinct components.
+   - The `VendingMachine` class is now responsible for creating beverages through the respective factories (`CoffeeFactory` and `TeaFactory`).
+   - The `CondimentDecorator` abstract class and its concrete subclasses (`Milk` and `Sugar`) handle the addition and management of condiments.
+   - The price calculation logic is encapsulated within the `Beverage` and `CondimentDecorator` classes, promoting better encapsulation and making it easier to modify or extend the pricing rules in the future.
+
+3. **Use of Design Patterns**:
+   - The refactored design incorporates the use of the Abstract Factory Pattern (`CoffeeFactory` and `TeaFactory`) for creating different types of beverages.
+   - The Decorator Pattern is implemented through the `CondimentDecorator` abstract class and its concrete subclasses (`Milk` and `Sugar`), allowing dynamic addition and removal of condiments to beverages.
+   - The encapsulation of price calculation within the `Beverage` and `CondimentDecorator` classes follows the principles of the Strategy Pattern, making it easier to modify or replace the pricing strategy in the future.
+
+4. **Improved Extensibility and Maintainability**:
+   - The introduction of abstract classes and interfaces, along with the use of design patterns, makes the code more extensible and maintainable.
+   - Adding new types of beverages or condiments can be done by creating new concrete subclasses without modifying the existing code, adhering to the Open/Closed Principle.
+   - Modifying or replacing the pricing logic can be achieved by updating the respective classes (`Beverage` and `CondimentDecorator`) without affecting other parts of the code.
+   - The separation of concerns and encapsulation of responsibilities in different classes improve code readability, testability, and overall maintainability.
+
+5. **Code Reuse and Reduced Duplication**:
+   - The use of abstract classes and interfaces promotes code reuse by allowing concrete subclasses to inherit common properties and behaviors.
+   - The `calculatePrice()` method in the `CondimentDecorator` class avoids duplication of price calculation logic for different condiments.
+   - The factories (`CoffeeFactory` and `TeaFactory`) encapsulate the creation of specific types of beverages, reducing duplication and promoting code reuse.
+
+Overall, the refactored design adheres to the principles of object-oriented design, such as the Open/Closed Principle, Single Responsibility Principle, and encapsulation. It promotes code reuse, extensibility, maintainability, and testability, making it easier to add new features, modify existing functionality, and adapt to changing requirements in the future.
+
 
 
 # Maven Commands
