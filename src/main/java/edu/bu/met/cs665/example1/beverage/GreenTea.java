@@ -1,15 +1,35 @@
-package edu.bu.met.cs665.example1.beverage;
+/**
+ * Name: Dhruv Prajapati
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 22/04/2024
+ * File Name: GreenTea.java
+ * Description: This class represents a type of tea beverage called Green Tea.
+ */
 
-import edu.bu.met.cs665.example1.Beverage;
+ package edu.bu.met.cs665.example1.beverage;
 
-public class GreenTea extends Beverage{
-
-    public GreenTea(){
-        this.description = "Green Tea";
-    }
-    @Override
-    public float calcualtePrice() {
-        // TODO Auto-generated method stub
-        return this.baseprice;
-    }
-}
+ import edu.bu.met.cs665.example1.Beverage;
+ 
+ /**
+  * This class represents a type of tea beverage called Green Tea.
+  */
+ public class GreenTea extends Beverage {
+ 
+     /**
+      * Constructs a new GreenTea object.
+      */
+     public GreenTea() {
+         this.description = "Green Tea";
+     }
+ 
+     /**
+      * Calculates the price of the GreenTea beverage.
+      *
+      * @return The base price of the GreenTea beverage.
+      */
+     @Override
+     public float calculatePrice() {
+         return this.baseprice;
+     }
+ }
+ 
